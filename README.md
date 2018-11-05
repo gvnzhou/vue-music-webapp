@@ -8,30 +8,20 @@
 
 # vue-music-webapp
 
-## Project setup
-```
-npm install
-```
+## 前言
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+最近时间比较空闲，打算接触接触不同方向的前端项目，所以准备模仿开发一款音乐类webapp，锻炼自己的业务能力。
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## 技术栈
 
-### Run your tests
-```
-npm run test
-```
+vue + vue-router + vuex + axios + eslint + webpack 
 
-### Lints and fixes files
-```
-npm run lint
-```
+## 页面
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+...
+
+## 功能
+
+...
+
+## 使用
