@@ -1,7 +1,9 @@
 <p align="center">vue-music-webapp</p>
 <p align="center">
+  <a href="https://github.com/javion25/vue-music-webapp"><img src="https://img.shields.io/badge/npm-v4.1.2-blue.svg?maxAge=2592000" alt=""></a>
   <a href="https://github.com/vuejs/vue-cli"><img src="https://img.shields.io/badge/vue--cli-v3.1.0-blue.svg" alt="vue-cli"></a>
   <a href="https://github.com/vuejs/vue"><img src="https://img.shields.io/badge/vue-v2.5.17-blue.svg" alt="Vue"></a>
+  <a href="https://github.com/javion25/vue-music-webapp/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"></a>
 </p>
 
 # vue-music-webapp
