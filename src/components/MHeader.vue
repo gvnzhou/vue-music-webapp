@@ -1,12 +1,18 @@
 <template>
   <div class="header">
-    header111
+    网红云音乐
   </div>
 </template>
 
-<style lange="scss" scoped>
+<style lang="scss" scoped>
+@import '@/sass/variable.scss';
 .header {
-  background-color: $theme-color;
+  padding: 15px 0;
+  background-color: $color-background;
+  color: #ffffff;
+  text-align: center;
+  font-size: $font-size-large;
+  border-bottom: 1px solid #000;
 }
 </style>
 
@@ -15,4 +21,3 @@ export default {
   
 }
 </script>
-
