@@ -1,6 +1,6 @@
 <template>
   <div class="recommand">
-    <div class="slider-container">
+    <div class="slider-container" v-if="recommend.length">
       <slider>
         <div v-for="item in recommend" :key="item.id">
           <a :href="item.linkUrl">
@@ -9,6 +9,7 @@
         </div>
       </slider>
     </div>
+    <h2>热门歌单推荐</h2>
   </div>
 </template>
 
