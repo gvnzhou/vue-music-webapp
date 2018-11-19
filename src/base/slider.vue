@@ -76,26 +76,29 @@ export default {
     }
   },
   mounted () {
-    this._initStyle()
-    this._initDots()
-    this._initSlider()
-    if (this.autoPlay) {
-      this._play()
-    }
-    window.addEventListener('resize', () => {
-      if (!this.slider) {
-        return
+    setTimeout(() => {
+      this._initStyle()
+      this._initDots()
+      this._initSlider()
+      if (this.autoPlay) {
+        this._play()
       }
-      this._initStyle(true)
-      this.slider.refresh()
-    })
+      window.addEventListener('resize', () => {
+        if (!this.slider) {
+          return
+        }
+        this._initStyle(true)
+        this.slider.refresh()
+      })
+    }, 20)
+    
   },
   destroyed () {
+    console.log(111)
     clearTimeout(this.timer)
   },
   methods: {
     _initStyle(isResize) {
-      console.log(this.$refs.sliderGroup)
       this.children = this.$refs.sliderGroup.children
 
       let width = 0

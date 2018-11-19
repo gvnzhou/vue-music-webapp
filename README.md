@@ -33,10 +33,15 @@ vue + vue-router + vuex + axios&jsonp + eslint + webpack
 
 ## TODO
 
-[] 引入fastclick，解决移动端300ms点击延迟
-[] 通过jsonp跨域获取QQ音乐歌曲信息
-[] 移动端适配方案
-[] 轮播图组件设计（父容器视口，子容器列表，左右拖动，dots(点击滑动)，配置项（自动轮播，循环轮播，轮播间隔...））
+- [x] 引入fastclick，解决移动端300ms点击延迟（fastclick原理）
+- [x] 通过jsonp跨域抓取QQ音乐相关信息
+- [ ] 移动web适配（手淘flexible）
+- [x] 轮播图组件设计（父容器视口，子容器列表，左右拖动，dots(点击滑动)，配置项（自动轮播，循环轮播，轮播间隔...））
+- [x] 服务器代理获取数据
+- [ ] 歌单组件（滚动...）
+- [x] vue-lazyload图片懒加载（vue-lazyload源码）
+- [x] loading组件
+- [x] keep-live
 
 ## 使用
 

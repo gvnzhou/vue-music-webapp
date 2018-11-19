@@ -18,8 +18,11 @@
 <style lang="scss" scoped>
 @import '@/sass/variable.scss';
 .nav {
+  // position: fixed;
+  // top: 45px;
   position: relative;
   display: flex;
+  width: 100%;
   height: 40px;
   justify-content: space-around;
   align-items: center;
@@ -27,6 +30,7 @@
   font-size: $font-size-medium;
   color: #ffffff;
   border-bottom: 1px solid #a40011;
+  z-index: 99;
   div {
     em {
       padding: 3px 15px;
