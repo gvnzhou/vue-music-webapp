@@ -46,4 +46,6 @@ vue + vue-router + vuex + axios&jsonp + eslint + webpack
 
 ## 使用
 
-...
+`npm i`
+
+`npm run serve`
