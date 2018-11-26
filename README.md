@@ -35,13 +35,15 @@ vue + vue-router + vuex + axios&jsonp + eslint + webpack
 
 - [x] ~~引入fastclick，解决移动端300ms点击延迟~~ （Note: As of late 2015 most mobile browsers - notably Chrome and Safari - no longer have a 300ms touch delay, so fastclick offers no benefit on newer browsers, and risks introducing bugs into your application. Consider carefully whether you really need to use it.）
 - [x] 通过jsonp跨域抓取QQ音乐相关信息
-- [ ] 移动web适配（手淘flexible）
 - [x] 轮播图组件设计（父容器视口，子容器列表，左右拖动，dots(点击滑动)，配置项（自动轮播，循环轮播，轮播间隔...））
 - [x] 服务器代理获取数据
-- [ ] 歌单组件（滚动...）
+- [x] 歌单组件（滚动...）
 - [x] vue-lazyload图片懒加载（vue-lazyload源码）
 - [x] loading组件
 - [x] keep-live
+- [x] 歌手页-歌手数据处理（添加大写字母分类、排序）
+- [ ] 歌手页-title滚动fixed、左侧字母联动、字母列表点击跳转
+- [ ] 移动web适配（手淘flexible）
 - [ ] 联系人列表（歌手页）
 
 ## 使用

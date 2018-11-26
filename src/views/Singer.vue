@@ -1,7 +1,7 @@
 <template>
-  <div class="singer">
-    <ul class="singer-list">
-      <li class="singer-group" v-for="(item,index) in singers" :key="index">
+  <div class="singer" @scroll="_onScroll" ref="singer">
+    <ul class="singer-list" ref="singerList">
+      <li class="singer-group" v-for="(item,index) in singers" :key="index" :data-scrollIndex="index" >
         <h2 class="title">{{ item.index }}</h2>
         <ul class="son-list">
           <li v-for="i in item.data" :key="i.singer_id">
@@ -12,12 +12,13 @@
       </li>
     </ul>
     <div class="letter-search">
-      <div v-for="(item, index) in firstLetter" :key="index">{{ item }}</div>
+      <div :class="{'active': currentIndex === index }" v-for="(item, index) in firstLetter" :key="index" @click="_scrollTo(index)">{{ item }}</div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+@import '@/sass/variable.scss';
 .singer {
   position: fixed;
   top: 88px;
@@ -71,6 +72,9 @@
     > div {
       margin: 3px 0;
     }
+    .active {
+      color: $color-theme;
+    }
   }
 }
 
@@ -89,6 +93,10 @@ export default {
   },
   created () {
     this._getSinger()
+  },
+  mounted () {
+    // 监听触摸事件
+    this.singerList = this.$refs['singerList'].children
   },
   computed: {
     firstLetter() {
@@ -141,6 +149,25 @@ export default {
       })
 
       return arr.concat(arr2)
+    },
+    _onScroll(e) {
+      // 判断当前滚动位置, 设置fixed-title
+      Array.prototype.forEach.call(this.singerList, (element, index) => {
+        if (element.offsetTop === this.$refs['singer'].scrollTop) {
+          this.currentIndex = index
+          // todo: title fixed
+        }
+      });
+    },
+    _scrollTo(index) {
+      console.log(this.singerList)
+      Array.prototype.forEach.call(this.singerList, (element) => {
+        if (+element.getAttribute('data-scrollIndex') === index) {
+          this.currentIndex = index
+          this.$refs['singer'].scrollTop = element.offsetTop
+        }
+      });
+     
     }
   }
 }
