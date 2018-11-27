@@ -2,7 +2,7 @@
   <div class="singer" @scroll="_onScroll" ref="singer">
     <ul class="singer-list" ref="singerList">
       <li class="singer-group" v-for="(item,index) in singers" :key="index" :data-scrollIndex="index" >
-        <h2 class="title">{{ item.index }}</h2>
+        <h2 :class="['title', { 'fixed-top': index === 0 }]">{{ item.index }}</h2>
         <ul class="son-list">
           <li v-for="i in item.data" :key="i.singer_id">
             <img :src="i.singer_pic">
@@ -36,8 +36,8 @@
         font-weight: 500;
         background: #999999;
       }
-      .fixed-title {
-
+      .fixed-top {
+        position: fixed;
       }
       .son-list {
         padding: 20px 0 20px 20px;
@@ -95,7 +95,6 @@ export default {
     this._getSinger()
   },
   mounted () {
-    // 监听触摸事件
     this.singerList = this.$refs['singerList'].children
   },
   computed: {
@@ -108,7 +107,6 @@ export default {
       getSinger().then((res) => {
         if (res.data.code === ERR_OK) {
           this.singers = this._normalizeSinger(res.data.singerList.data.singerlist)
-          console.log(this.singers)
         }
       })
     },
@@ -153,21 +151,19 @@ export default {
     _onScroll(e) {
       // 判断当前滚动位置, 设置fixed-title
       Array.prototype.forEach.call(this.singerList, (element, index) => {
-        if (element.offsetTop === this.$refs['singer'].scrollTop) {
+        if (element.offsetTop < this.$refs['singer'].scrollTop + this.$refs['singer'].offsetHeight / 2) {
           this.currentIndex = index
           // todo: title fixed
         }
       });
     },
     _scrollTo(index) {
-      console.log(this.singerList)
       Array.prototype.forEach.call(this.singerList, (element) => {
         if (+element.getAttribute('data-scrollIndex') === index) {
           this.currentIndex = index
           this.$refs['singer'].scrollTop = element.offsetTop
         }
       });
-     
     }
   }
 }
