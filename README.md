@@ -51,5 +51,3 @@ vue + vue-router + vuex + axios&jsonp + eslint + webpack
 `npm i`
 
 `npm run serve`
-
-111
